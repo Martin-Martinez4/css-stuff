@@ -1,0 +1,101 @@
+/* 
+  - Use Shades: Same Colors with different brightness
+  
+  - Use HSL
+    - start nuetral
+    - change l to create shades
+    - try to keep s the same for all colors
+    - keep h the same
+
+    --- dark mode
+    - bg color 0% l
+    - next layer up 5%
+    - next layer 10%
+
+    - text 
+    95% - 90% text
+    70% text-muted
+
+    --- light mode
+      bg l 90%
+      bg 95%
+      bg 100%
+
+    - text
+      5% text
+      30% text-muted
+*/
+
+:root{
+  --bg-dark: hsl(0, 0%, 2%);
+  --bg: hsl(0, 0%, 5%);
+  --bg-light: hsl(0, 0%, 10%);
+
+  --text: hsl(0, 0%, 95%);
+  --text-muted: hsl(0, 0%, 80%);
+
+  --border: hsl(0, 0% 30%);
+  --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+  --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+  --highlight: hsl(0, 0%, 30%);
+  --border-card: solid 1px var(--border);
+  --shadow: 0px 2px 2px hsla(0, 0%, 5%, 0.5), 0px 4px 4px hsla(0, 0%, 10%, 0.15); 
+
+}
+
+body.light{
+  --bg-dark: hsl(0, 0%, 90%);
+  --bg: hsl(0, 0%, 95%);
+  --bg-light: hsl(0, 0%, 100%);
+
+  --text: hsl(0, 0%, 5%);
+  --text-muted: hsl(0, 0%, 30%);
+
+  --border: hsl(0 0% 30%);
+
+  --border: hsl(0, 0% 30%);
+  --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+  --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+  --highlight: hsl(0, 0%, 100%);
+  --border-card: solid 1px var(--bg);
+   --shadow: 0px 2px 2px hsla(0, 0%, 10%, 0.5), 0px 4px 4px hsla(0, 0%, 20%, 0.10); 
+}
+
+body{
+  background: var(--bg-dark);
+  color: var(--text-muted);
+}
+
+
+
+button{
+  background: var(--bg-light);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  color: var(--text);
+  font-weight: 700;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  border: none; 
+  box-shadow: var(--shadow);
+}
+button:hover{
+  background: var(--gradient-hover);
+}
+
+div{
+  background: var(--bg);
+  background: var(--gradient);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: var(--border-card);
+  border-top: solid 1px var(--highlight);
+}
+
+h1{
+  color: var(--text);
+}
+
+section{
+  width: 20%;
+  margin: 5rem auto;
+}
