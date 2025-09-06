@@ -11,23 +11,44 @@
 <body>
   <section>
 
-    <div>
-      <h1>Heading</h1>
-      <p>muted text</p>
-      <button>Click Me!</button>
+    <div class="card flex">
+      <div class="card-info">
+
+        <h2>Heading</h2>
+        <p>muted text</p>
+        <button>Click Me!</button>
+      </div>
+    </div>
+    <div class="card-colors">
+
+      <div class="success">
+        success
+      </div>
+      <div class="caution">
+        caution
+      </div>
+      <div class="danger">
+        danger
+      </div>
+      <div class="info">
+        info
+      </div>
     </div>
   </section>
-  <label>
-    Hue
-    <input id="hue" type="range" min="0" max="360" value="0">
+  <section>
 
-  </label>
-  <label>
-    Saturation
+    <label id="hue-label">
+      0 Hue
+    </label>
+    <input id="hue" type="range" min="0" max="360" value="0">
+    <label id="saturation-label">
+      0% Saturation
+    </label>
     <input id="saturation" type="range" min="0" max="100" value="0">
-  </label>
+  </section>
 
 </body>
 
 <script src="script.js"></script>
+
 </html>
